@@ -10,7 +10,7 @@ on:
       tags:
         description: "Image tag"
         required: true
-        default: 'test'
+        default: '1.0.0'
 permissions:
   contents: read
   packages: write
@@ -42,7 +42,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./task_b/Dockerfile
+          context: ./task_b/
+          file: ./task_b/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
   # TODO: Add test job
