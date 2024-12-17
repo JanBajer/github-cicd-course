@@ -19,3 +19,8 @@ jobs:
         - name: Run pytest
           run: |
             pytest ./task_a/task_a.py
+        - name: Generate an HTML Report for pytest
+          uses: actions/upload-artifact
+          with:
+            name: pytest-html-report
+            path: report.html
