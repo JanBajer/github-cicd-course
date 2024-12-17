@@ -10,7 +10,7 @@ on:
       tags:
         description: "Image tag"
         required: true
-        type: boolean
+        default: 'test'
 permissions:
   contents: read
   packages: write
