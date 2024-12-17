@@ -7,7 +7,7 @@ on:
         description: 'Message'
         required: true
         default: 'Hello CI/CD'
-      tags:
+      tag:
         description: "Image tag"
         required: true
         default: '1.0.0'
