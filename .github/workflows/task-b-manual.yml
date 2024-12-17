@@ -38,10 +38,11 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository }}
           tags: type=ref,event=tag
+      # TODO: build and push docker image
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: ./task_b/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
-      # TODO: build and push docker image
   # TODO: Add test job
